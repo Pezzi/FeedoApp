@@ -1,0 +1,23 @@
+/* src/components/maps/MapStyles.css */
+
+.leaflet-popup-content-wrapper {
+  background: rgba(0, 0, 0, 0.932); /* Fundo escuro e translúcido */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Sombra sutil para profundidade */
+  backdrop-filter: blur(6px); /* O efeito de "vidro fosco" */
+  -webkit-backdrop-filter: blur(6px); /* Compatibilidade com Safari */
+  border-radius: 20px; /* Cantos arredondados */
+  border: 1px solid rgb(201, 214, 59); /* Borda de vidro sutil */
+  color: rgb(201, 214, 59); /* Cor do texto branco para bom contraste */
+  opacity: 0.9; /* Levemente transparente */
+}
+
+.leaflet-popup-content {
+  margin: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.leaflet-popup-tip-container {
+  /* Escondendo a flecha padrão, que não combina com o estilo */
+  display: none;
+}

@@ -1,0 +1,73 @@
+/* src/styles/datepicker-styles.css */
+
+/* Container principal do calendário */
+.rdp {
+  --rdp-cell-size: 40px;
+  --rdp-accent-color: #DDF247; /* Sua cor de realce */
+  --rdp-background-color: rgba(35, 35, 35, 0.75); /* Fundo com transparência */
+  
+  margin: 1em;
+  color: #d4d4d8; /* Cor padrão do texto (cinza claro) */
+  border: 1px solid var(--rdp-accent-color); /* Borda na cor de realce */
+  border-radius: 12px;
+  
+  /* Efeito de glasmorfismo */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* --- REGRAS CORRIGIDAS E MAIS FORTES --- */
+
+/* Estilo para os dias selecionados (início e fim do intervalo) */
+.rdp-day_selected:not([disabled]),
+.rdp-day_range_start:not([disabled]),
+.rdp-day_range_end:not([disabled]) {
+  background-color: var(--rdp-accent-color) !important; /* !important força a prioridade */
+  color: #18181b !important; /* Texto escuro para contraste */
+  font-weight: bold;
+}
+
+/* Estilo para os dias NO MEIO do intervalo */
+.rdp-day_range_middle:not([disabled]) {
+    background-color: rgba(221, 242, 71, 0.25) !important; /* Cor de realce com baixa opacidade */
+    color: #f4f4f5 !important; /* Texto claro */
+    border-radius: 0; /* Deixa o meio do intervalo reto */
+}
+
+/* Arredonda as pontas do intervalo para um visual de "pílula" */
+.rdp-day_range_start:not(.rdp-day_range_end) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+.rdp-day_range_end:not(.rdp-day_range_start) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+/* Caso selecione apenas um dia */
+.rdp-day_range_end.rdp-day_range_start {
+    border-radius: 50%;
+}
+
+
+/* --- OUTROS ESTILOS --- */
+
+/* Botões de navegação (setas < >) */
+.rdp-nav_button {
+  color: var(--rdp-accent-color);
+}
+
+/* Cor do texto dos dias da semana (Dom, Seg, etc.) */
+.rdp-head_cell {
+    color: #a1a1aa;
+}
+
+/* Remove a borda de foco azul padrão do navegador */
+.rdp-button:focus-visible:not([disabled]) {
+    border: none;
+    box-shadow: none;
+    outline: none;
+}

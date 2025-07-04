@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+/* Adicionamos esta regra para definir o fundo padrão da aplicação */
+body {
+  @apply bg-fundo-principal text-texto-normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
